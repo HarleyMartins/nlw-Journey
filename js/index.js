@@ -5,6 +5,24 @@ const atividade = {
   finalizada: true,
 }
 
+// array de atividades
+
+const atividades = [
+  atividade,
+  {
+    nome: "Academia em grupo",
+    data: new Date("2024-07-09 12:00"),
+    finalizada: false,
+  },
+
+  atividade,
+  {
+    nome: "Gaming Session",
+    data: new Date("2024-07-09 16:00"),
+    finalizada: true,
+  },
+]
+
 // arrow function
 const criarItemDeAtividade = (atividade) => {
   let input = `<input type="checkbox" `
@@ -25,4 +43,6 @@ const criarItemDeAtividade = (atividade) => {
 }
 
 const section = document.querySelector("section")
-section.innerHTML = criarItemDeAtividade(atividade)
+for (let atividade of atividades) {
+  section.innerHTML += criarItemDeAtividade(atividade)
+}
