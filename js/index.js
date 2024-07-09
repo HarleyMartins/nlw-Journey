@@ -10,10 +10,10 @@ const criarItemDeAtividade = (atividade) => {
   let input = `<input type="checkbox" `
 
   if (atividade.finalizada) {
-    input = input + "checked"
+    input += "checked"
   }
 
-  input = input + ">"
+  input += ">"
 
   return `
   <div>
