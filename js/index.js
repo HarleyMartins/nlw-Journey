@@ -46,7 +46,15 @@ const criarItemDeAtividade = (atividade) => {
 
 const atualizarLista = () => {
   const section = document.querySelector("section")
+  // verifica se a lista está vazia
+  if (atividades.length == 0) {
+    section.innerHTML = `<p>Nenhuma atividade cadastrada.</p>`
+    return
+  }
+
   for (let atividade of atividades) {
     section.innerHTML += criarItemDeAtividade(atividade)
   }
 }
+
+atualizarLista()
