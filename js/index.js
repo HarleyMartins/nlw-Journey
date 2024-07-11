@@ -7,7 +7,7 @@ const atividade = {
 
 // array de atividades
 
-const atividades = [
+let atividades = [
   atividade,
   {
     nome: "Academia em grupo",
@@ -22,6 +22,8 @@ const atividades = [
     finalizada: true,
   },
 ]
+
+atividades = []
 
 // arrow function
 const criarItemDeAtividade = (atividade) => {
