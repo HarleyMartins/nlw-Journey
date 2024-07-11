@@ -44,7 +44,9 @@ const criarItemDeAtividade = (atividade) => {
   `
 }
 
-const section = document.querySelector("section")
-for (let atividade of atividades) {
-  section.innerHTML += criarItemDeAtividade(atividade)
+const atualizarLista = () => {
+  const section = document.querySelector("section")
+  for (let atividade of atividades) {
+    section.innerHTML += criarItemDeAtividade(atividade)
+  }
 }
