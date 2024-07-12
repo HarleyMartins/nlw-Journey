@@ -20,7 +20,6 @@ const atividade = {
 }
 
 // array de atividades
-
 let atividades = [
   atividade,
   {
@@ -41,7 +40,10 @@ let atividades = [
 
 // arrow function
 const criarItemDeAtividade = (atividade) => {
-  let input = `<input type="checkbox" `
+  let input = `<input 
+  onchange="concluirAtividade(event)"
+  value="${atividade.data}"
+  type="checkbox" `
 
   if (atividade.finalizada) {
     input += "checked"
@@ -105,8 +107,8 @@ const salvarAtividade = (event) => {
 
 const criarDiasSelecao = () => {
   const dias = [
-    "2024-02-29",
     "2024-02-28",
+    "2024-02-29",
     "2024-03-01",
     "2024-03-02",
     "2024-03-03",
@@ -125,16 +127,30 @@ const criarDiasSelecao = () => {
 criarDiasSelecao()
 
 const criarHorasSelecao = () => {
-  const horas = ["5:30", "6:00", "6:30", "7:00", "7:30", "8:00"]
-
   let horasDisponiveis = ""
 
   for (let i = 6; i < 23; i++) {
-    horasDisponiveis += ` <option value="${i}:00">${i}:00</option> `
-    horasDisponiveis += ` <option value="${i}:15">${i}:15</option> `
+    const hora = String(i).padStart(2, "0")
+    horasDisponiveis += ` <option value="${hora}:00">${hora}:00</option> `
+    horasDisponiveis += ` <option value="${hora}:15">${hora}:15</option> `
   }
 
   document.querySelector("select[name='hora']").innerHTML = horasDisponiveis
 }
 
 criarHorasSelecao()
+
+const concluirAtividade = (event) => {
+  const input = event.target
+  const dataDesteInput = input.value
+
+  const atividade = atividades.find((atividade) => {
+    return atividade.data == dataDesteInput
+  })
+
+  if (!atividade) {
+    return
+  }
+
+  atividade.finalizada = !atividade.finalizada
+}
