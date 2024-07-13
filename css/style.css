@@ -1,42 +1,37 @@
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
-body {
-  background-color: #000;
-}
-
-:root {
-  --font-int: Inter, sans-serif;
-}
-
+html,
 input,
 select,
 button,
 option {
-  font: 600 1.5rem var(--font-int);
-  background-color: #000;
+  font-family: "Inter", sans-serif;
+  background-color: #09090b;
   color: #fafafa;
-  letter-spacing: -0.02em;
+
   line-height: 120%;
+  letter-spacing: -0.02em;
 }
 
+/* app */
 #app {
   padding: 40px 20px;
   max-width: 320px;
   margin: auto;
 }
 
+/* form */
 #place {
   display: flex;
   align-items: center;
   gap: 8px;
+
   padding: 22px 16px;
+
   font-size: 14px;
   margin-bottom: 32px;
 }
@@ -59,7 +54,7 @@ button {
 
 .field-wrapper {
   padding: 18px;
-  background: #09090b;
+  background-color: #09090b;
   border: 1px solid #27272a;
   border-radius: 8px;
 
@@ -78,28 +73,35 @@ button {
   padding: 12px 20px;
   background-color: #aff445;
   border-radius: 8px;
+
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 16px;
+
   color: #132f00;
-  letter-spacing: -0.02em;
+  cursor: pointer;
 }
 
 .card-bg {
   background: #18181b;
+
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1),
     0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1),
     inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03),
     inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+
   border-radius: 12px;
 }
 
+/* main */
 main {
   margin-top: 32px;
 }
+
 h1 {
   text-align: center;
   font-weight: 600;
   font-size: 24px;
+
   margin-bottom: 24px;
 }
 
@@ -109,14 +111,14 @@ section {
 }
 
 section input[type="checkbox"] {
-  inset: 0;
   position: absolute;
-  border: 1px solid red;
+  inset: 0;
 }
 
 section .card-bg {
   position: relative;
   padding: 10px 16px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
